@@ -83,4 +83,11 @@ public class ReservationRepository : IRepository<Reservation>
             await _context.SaveChangesAsync();
         }
     }
+
+    public decimal GetRestaurantRevenue(int restaurantId)
+    {
+        using var context = new RestaurantReservationDbContext();
+        return context.Set<decimal>().FromSqlInterpolated($"SELECT dbo.CalculateRestaurantRevenue({restaurantId})").AsEnumerable().FirstOrDefault();
+    }
+
 }

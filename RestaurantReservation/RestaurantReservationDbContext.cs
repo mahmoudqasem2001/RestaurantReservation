@@ -42,6 +42,9 @@ namespace RestaurantReservation
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+            modelBuilder.HasDbFunction(() => CalculateRestaurantRevenue(default))
+        .HasName("CalculateRestaurantRevenue");
+
             modelBuilder.Entity<Order>()
        .HasOne(o => o.Reservation)
        .WithMany(r => r.Orders)
@@ -174,9 +177,16 @@ namespace RestaurantReservation
                     new OrderItem { OrderItemId = 4, OrderId = 4, ItemId = 4, Quantity = 6 },
                     new OrderItem { OrderItemId = 5, OrderId = 5, ItemId = 5, Quantity = 8 }
                 );
+
             });
         }
-      
+
+        public static decimal CalculateRestaurantRevenue(int restaurantId)
+        {
+            throw new NotSupportedException("This method is intended for use with database queries only.");
+        }
+
+
 
 
 
