@@ -93,4 +93,11 @@ public class ReservationRepository : IRepository<Reservation>
         return revenue;
     }
 
+    public List<ReservationDetail> GetReservationsWithCustomerAndRestaurantInfo()
+    {
+        using var context = new RestaurantReservationDbContext();
+        return context.ReservationDetails.ToList();
+    }
+
+
 }

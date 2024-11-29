@@ -51,4 +51,10 @@ public class EmployeeRepository : IRepository<Employee>
             await _context.SaveChangesAsync();
         }
     }
+
+    public List<EmployeeDetail> GetEmployeesWithRestaurantDetails()
+    {
+        using var context = new RestaurantReservationDbContext();
+        return context.EmployeeDetails.ToList();
+    }
 }

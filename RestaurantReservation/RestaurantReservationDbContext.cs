@@ -45,6 +45,9 @@ namespace RestaurantReservation
             modelBuilder.HasDbFunction(() => CalculateRestaurantRevenue(default))
         .HasName("CalculateRestaurantRevenue");
 
+            modelBuilder.Entity<ReservationDetail>().HasNoKey().ToView("ReservationDetails");
+            modelBuilder.Entity<EmployeeDetail>().HasNoKey().ToView("EmployeeDetails");
+
 
 
             modelBuilder.Entity<Order>()
