@@ -1,0 +1,108 @@
+{
+  "settings": {
+    "components": {
+      "code": true,
+      "binaries": false
+    },
+    "targetId": "",
+    "targetDisplayName": ".NET 8.0"
+  },
+  "analysisStartTime": "2024-11-16T20:54:44.358088Z",
+  "analysisEndTime": "2024-11-16T20:55:42.2330302Z",
+  "privacyModeHelpUrl": "https://go.microsoft.com/fwlink/?linkid=2270980",
+  "stats": {
+    "summary": {
+      "projects": 1,
+      "issues": 2,
+      "incidents": 2,
+      "effort": 2
+    },
+    "charts": {
+      "severity": {
+        "Mandatory": 2,
+        "Optional": 0,
+        "Potential": 0,
+        "Information": 0
+      },
+      "category": {
+        "Project": 2
+      }
+    }
+  },
+  "projects": [
+    {
+      "path": "RestaurantReservation\\RestaurantReservation.csproj",
+      "startingProject": true,
+      "issues": 2,
+      "storyPoints": 2,
+      "ruleInstances": [
+        {
+          "incidentId": "2f43f7ca-3551-463e-9266-9572ae44ec98",
+          "ruleId": "Project.0001",
+          "projectPath": "RestaurantReservation\\RestaurantReservation.csproj",
+          "state": "Active",
+          "location": {
+            "kind": "File",
+            "path": "RestaurantReservation\\RestaurantReservation.csproj"
+          }
+        },
+        {
+          "incidentId": "b1807073-1cc2-4d64-9205-b53f54b424d5",
+          "ruleId": "Project.0002",
+          "projectPath": "RestaurantReservation\\RestaurantReservation.csproj",
+          "state": "Active",
+          "location": {
+            "snippetModel": {
+              "unrestricted": "Current: .NETFramework,Version=v4.8.1\nNew: net8.0",
+              "protected": "Current: .NETFramework,Version=v4.8.1\nNew: net8.0"
+            },
+            "kind": "File",
+            "path": "RestaurantReservation\\RestaurantReservation.csproj",
+            "snippet": "Current: .NETFramework,Version=v4.8.1\nNew: net8.0",
+            "protectedSnippet": "Current: .NETFramework,Version=v4.8.1\nNew: net8.0"
+          }
+        }
+      ]
+    }
+  ],
+  "rules": {
+    "Project.0001": {
+      "id": "Project.0001",
+      "description": "Project file needs to be converted to SDK-style. Modern .NET framework projects require a change in the project file format and use SDK corresponding to project flavor and functionality.",
+      "label": "Project file needs to be converted to SDK-style",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    },
+    "Project.0002": {
+      "id": "Project.0002",
+      "description": "Project\u0027s target framework(s) needs to be changed to the new target framework that you selected for this upgrade.\n\nDuring upgrade target framework will be adjusted to corresponding platform when applicable. In some cases project would result in multiple target frameworks after the upgrade if it was using features that now have their own platforms in moderrn .NET frameworks (windows, iOS, Android etc).",
+      "label": "Project\u0027s target framework(s) needs to be changed",
+      "severity": "Mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "title": "Overview of porting from .NET Framework to .NET",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265227",
+          "isCustom": false
+        },
+        {
+          "title": ".NET project SDKs",
+          "url": "https://go.microsoft.com/fwlink/?linkid=2265226",
+          "isCustom": false
+        }
+      ]
+    }
+  }
+}
