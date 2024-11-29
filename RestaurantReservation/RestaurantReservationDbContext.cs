@@ -45,6 +45,8 @@ namespace RestaurantReservation
             modelBuilder.HasDbFunction(() => CalculateRestaurantRevenue(default))
         .HasName("CalculateRestaurantRevenue");
 
+
+
             modelBuilder.Entity<Order>()
        .HasOne(o => o.Reservation)
        .WithMany(r => r.Orders)
@@ -186,13 +188,7 @@ namespace RestaurantReservation
             throw new NotSupportedException("This method is intended for use with database queries only.");
         }
 
-
-
-
-
-
-
-
+     
 
     }
 }

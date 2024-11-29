@@ -2,6 +2,8 @@
 using RestaurantReservation;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
+
 
 public class CustomerRepository : IRepository<Customer>
 {
@@ -42,5 +44,13 @@ public class CustomerRepository : IRepository<Customer>
             _context.Customers.Remove(customer);
             await _context.SaveChangesAsync();
         }
+    }
+
+    public List<Customer> GetCustomersWithLargePartySize(int partySize)
+    {
+        using var context = new RestaurantReservationDbContext();
+        return context.Customers
+            .FromSqlInterpolated($"EXEC GetCustomersWithLargePartySize @partySize = {partySize}")
+            .ToList();
     }
 }
