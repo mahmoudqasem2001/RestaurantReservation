@@ -81,9 +81,3 @@ This project also incorporates advanced database functionalities such as stored 
 
 ---
 
-## Steps to Setup and Run
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/mahmoudqasem2001/RestaurantReservation.git
-cd RestaurantReservation
